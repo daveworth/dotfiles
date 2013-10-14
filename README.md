@@ -1,4 +1,3 @@
-dotfiles
-========
+# @daveworths' dotfiles
 
-The ubiquitous location of much yak-razor collection
+The ubiquitous location of much yak-razor collection.
