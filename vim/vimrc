@@ -1,0 +1,8 @@
+let mapleader = ','
+command! W w
+command! Q q
+
+execute pathogen#infect()
+syntax on
+runtime! config/**/*
+filetype plugin indent on
