@@ -1,0 +1,17 @@
+ack.vim
+ctrlp.vim
+delimitMate
+nerdcommenter
+nerdtree
+puppet-syntax-vim
+syntastic
+tslime.vim
+vim-coffee-script
+vim-endwise
+vim-fugitive
+vim-markdown
+vim-rails
+vim-rspec
+vim-slim
+vim-surround
+vim-tmux-navigator
