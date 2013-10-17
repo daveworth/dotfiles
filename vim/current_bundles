@@ -6,6 +6,7 @@ nerdtree
 puppet-syntax-vim
 syntastic
 tslime.vim
+vim-airline
 vim-coffee-script
 vim-endwise
 vim-fugitive
