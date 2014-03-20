@@ -93,8 +93,7 @@ augroup SimultaneousEdits
 augroup END
 
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.md set spell
-au BufRead,BufNewFile *.markdown set spell
+au BufRead,BufNewFile *.md,*.markdown set spell
 
 " Bubble single lines
 nmap J ddp
