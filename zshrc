@@ -51,7 +51,11 @@ source $ZSH/oh-my-zsh.sh
 PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
+PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
 export PATH
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 . /etc/profile.d/rvm.sh
 
