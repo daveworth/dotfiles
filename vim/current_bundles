@@ -11,6 +11,7 @@ vim-bundler
 vim-coffee-script
 vim-endwise
 vim-fugitive
+vim-gitgutter
 vim-gocode
 vim-golang
 vim-less
