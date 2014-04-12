@@ -6,3 +6,8 @@
 --type-set=coffee=.coffee
 
 --ignore-dir=log
+--ignore-dir=build_dir
+--ignore-dir=build
+--ignore-dir=pkg
+--ignore-dir=dist
+--ignore-dir=spec/tmp/assets
