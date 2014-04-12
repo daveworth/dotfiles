@@ -60,6 +60,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 . /etc/profile.d/rvm.sh
 
 bindkey -v
+bindkey -M vicmd v edit-command-line
 bindkey '^R' history-incremental-search-backward
 
 VISUAL=vim
