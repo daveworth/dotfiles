@@ -48,8 +48,10 @@ plugins=(git bundler git-extras)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+PATH="/usr/local/heroku/bin:$PATH"
+export PATH
 
 . /etc/profile.d/rvm.sh
 
