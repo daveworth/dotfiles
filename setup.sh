@@ -11,7 +11,7 @@ for DIR in "vim"; do
   fi
 done
 
-for FILE in "ackrc" "tmux.conf" "zshrc"; do
+for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig"; do
   TARGET=~/.$FILE
   if [[ ! -e $TARGET ]]; then
     ln -s $DOTFILE_ROOT/$FILE $TARGET
