@@ -11,6 +11,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 " Display
 """""""""
 colorscheme molokai
+set t_Co=256
 
 set laststatus=2   " always display a status line
 set number         " show line numbers
