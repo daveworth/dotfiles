@@ -57,7 +57,8 @@ export PATH
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-. /etc/profile.d/rvm.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 bindkey -v
 bindkey -M vicmd v edit-command-line
