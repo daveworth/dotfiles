@@ -28,6 +28,7 @@ if [[ ! -e $TARGET ]]; then
 else
   echo File $TARGET exists
 fi
+mkdir ~/.vim-tmp
 
 VIM_ROOT=$DOTFILE_ROOT/vim
 BUNDLE_ROOT=$VIM_ROOT/bundle
