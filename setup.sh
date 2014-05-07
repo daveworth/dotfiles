@@ -13,7 +13,7 @@ for DIR in "vim"; do
   fi
 done
 
-for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig"; do
+for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc"; do
   TARGET=~/.$FILE
   if [[ ! -e $TARGET ]]; then
     ln -s $DOTFILE_ROOT/$FILE $TARGET
