@@ -1,10 +1,12 @@
 https://github.com/mileszs/ack.vim.git
 https://github.com/kien/ctrlp.vim.git
 https://github.com/Raimondi/delimitMate.git
+https://github.com/Xuyuanp/git-nerdtree.git
 https://github.com/scrooloose/nerdcommenter.git
-https://github.com/scrooloose/nerdtree.git
 https://github.com/puppetlabs/puppet-syntax-vim.git
+https://github.com/mtth/scratch.vim.git
 https://github.com/scrooloose/syntastic.git
+https://github.com/godlygeek/tabular.git
 https://github.com/jgdavey/tslime.vim.git
 https://github.com/bling/vim-airline.git
 https://github.com/tpope/vim-bundler.git
@@ -13,6 +15,7 @@ https://github.com/tpope/vim-endwise.git
 https://github.com/tpope/vim-fugitive.git
 https://github.com/airblade/vim-gitgutter.git
 https://github.com/tpope/vim-markdown.git
+https://github.com/rodjek/vim-puppet.git
 https://github.com/tpope/vim-rails.git
 https://github.com/thoughtbot/vim-rspec.git
 https://github.com/tpope/vim-surround.git
