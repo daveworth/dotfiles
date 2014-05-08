@@ -11,4 +11,4 @@
 [color]
 	ui = true
 [push]
-	default = tracking
+	default = current
