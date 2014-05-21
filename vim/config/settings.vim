@@ -94,9 +94,6 @@ augroup SimultaneousEdits
 augroup END
 
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.md,*.markdown set spell
-"au BufRead,BufNewFile *.go set noexpandtab
-"au BufRead,BufNewFile *.go set nolist
 
 nnoremap <leader>r :set relativenumber!<cr>
 nnoremap <leader>l :set invlist<cr>
