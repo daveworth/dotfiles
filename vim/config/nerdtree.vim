@@ -8,4 +8,4 @@ let NERDTreeMinimalUI=1
 let NERDTreeMouseMode=2
 
 map <Leader>n :NERDTreeToggle \| :silent NERDTreeMirror<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__', '__pycache__']
