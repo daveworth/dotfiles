@@ -94,7 +94,7 @@ augroup SimultaneousEdits
 augroup END
 
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile Vagrantfile,Guardfile set filetype=ruby
+au BufRead,BufNewFile Vagrantfile,Guardfile,Capfile set filetype=ruby
 
 nnoremap <leader>r :set relativenumber!<cr>
 nnoremap <leader>l :set invlist<cr>
