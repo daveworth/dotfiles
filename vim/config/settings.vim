@@ -7,6 +7,7 @@
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set complete-=i
 
 " Display
 """""""""
