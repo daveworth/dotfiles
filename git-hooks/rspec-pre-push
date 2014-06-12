@@ -1,0 +1,25 @@
+#!/bin/bash
+# tputcolors
+
+txtund=$(tput sgr 0 1) # Underline
+txtbld=$(tput bold)    # Bold
+red=$(tput setaf 1)    #  red
+txtrst=$(tput sgr0)    # Reset
+
+function run_tests() {
+  rake
+  TEST_EXIT_CODE=$?
+
+  if [ $TEST_EXIT_CODE -ne 0 ]; then
+    echo
+    warning_copy "Git Push Rejected for Failing Tests"
+    echo
+    exit 1
+  fi
+}
+
+function warning_copy() {
+  echo " $red***** $txtund$red$1$txtrst $red*****$txtrst "
+}
+
+run_tests
