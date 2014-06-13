@@ -56,8 +56,6 @@ export PIP_VIRTUAL_ENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 source /usr/local/bin/virtualenvwrapper.sh
 
-bindkey '^R' history-incremental-search-backward
-
 ## ALL the editors
 VISUAL=vim
 EDITOR=vim
@@ -72,3 +70,5 @@ plugins=(git bundler chruby jira vi-mode virtualenv virtualenvwrapper gitignore)
 
 source $ZSH/oh-my-zsh.sh
 cd . # lame hack to trigger on-`cd` events like virtualenv hunting and chruby-auto stuff
+
+bindkey '^R' history-incremental-search-backward
