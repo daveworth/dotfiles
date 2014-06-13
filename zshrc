@@ -1,31 +1,19 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="bira"
 ZSH_THEME="agnoster"
 DEFAULT_USER="dworth"
 
 # Example aliases
 alias dir="ls -al"
 alias src="source ~/.zshrc"
+alias :q="logout"
+alias serve_www="ruby -run -ehttpd . -p8000"
+alias gitignore=gi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
+#
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -33,7 +21,7 @@ alias src="source ~/.zshrc"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -43,30 +31,44 @@ alias src="source ~/.zshrc"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler git-extras)
-
-source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
 PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 export PATH
 
+## Golang
 export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+## Ruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+chruby ruby-2.1.1
 
-bindkey -v
-bindkey -M vicmd v edit-command-line
+## Python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_VIRTUAL_ENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+source /usr/local/bin/virtualenvwrapper.sh
+
 bindkey '^R' history-incremental-search-backward
 
+## ALL the editors
 VISUAL=vim
 EDITOR=vim
 GIT_EDITOR=vim
 export EDITOR
 export VISUAL
 export GIT_EDITOR
+
+#XXX interesting plugins for further investigation:
+#  git-extras, ssh-agent
+plugins=(git bundler chruby jira vi-mode virtualenv virtualenvwrapper gitignore)
+
+source $ZSH/oh-my-zsh.sh
+cd . # lame hack to trigger on-`cd` events like virtualenv hunting and chruby-auto stuff
