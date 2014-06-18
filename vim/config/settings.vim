@@ -100,6 +100,7 @@ au BufRead,BufNewFile Vagrantfile,Guardfile,Capfile set filetype=ruby
 nnoremap <leader>r :set relativenumber!<cr>
 nnoremap <leader>l :set invlist<cr>
 nnoremap <leader>p :set invpaste<cr>
+nnoremap <leader>s :SyntasticToggleMode<cr>
 
 " Bubble single lines
 nmap J ddp
