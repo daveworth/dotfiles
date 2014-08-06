@@ -56,6 +56,9 @@ export PIP_VIRTUAL_ENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 source /usr/local/bin/virtualenvwrapper.sh
 
+## Node
+export NODE_PATH=/usr/local/lib/node_modules
+
 ## ALL the editors
 VISUAL=vim
 EDITOR=vim
