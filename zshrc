@@ -65,8 +65,8 @@ export VISUAL
 export GIT_EDITOR
 
 #XXX interesting plugins for further investigation:
-#  git-extras, ssh-agent
-plugins=(git bundler chruby jira vi-mode virtualenv virtualenvwrapper gitignore)
+#  git-extras, ssh-agent virtualenvwrapper
+plugins=(git bundler chruby jira vi-mode virtualenv gitignore pip)
 
 source $ZSH/oh-my-zsh.sh
 cd . # lame hack to trigger on-`cd` events like virtualenv hunting and chruby-auto stuff
