@@ -96,6 +96,7 @@ augroup END
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile Vagrantfile,Guardfile,Capfile set filetype=ruby
+au BufRead,BufNewFile *.hamljs set filetype=haml
 
 nnoremap <leader>r :set relativenumber!<cr>
 nnoremap <leader>l :set invlist<cr>
