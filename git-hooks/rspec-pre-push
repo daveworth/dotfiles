@@ -7,7 +7,7 @@ red=$(tput setaf 1)    #  red
 txtrst=$(tput sgr0)    # Reset
 
 function run_tests() {
-  rake
+  bundle exec rake
   TEST_EXIT_CODE=$?
 
   if [ $TEST_EXIT_CODE -ne 0 ]; then
