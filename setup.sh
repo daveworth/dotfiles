@@ -22,6 +22,14 @@ for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc"; do
   fi
 done
 
+CONFIG_DIR=~/config
+if [[ ! -d ~/config ]]; then
+  mkdir $CONFIG_DIR
+fi
+for CONFIG_FILE in "flake8"; do
+  ln -s $DOTFILE_ROOT/$CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+done
+
 TARGET=~/.vimrc
 if [[ ! -e $TARGET ]]; then
   ln -s ~/.vim/vimrc $TARGET
