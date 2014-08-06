@@ -13,7 +13,7 @@ endfunction
 " TODO - replace RunNearestSpec for PyTest
 
 function! InSpecFile()
-  return match(expand("%"), "_test.py$") != -1 || match(expand("%"), "^test_.*.py$") != -1
+  return match(expand("%"), "_test.py$") != -1 || match(expand("%"), "/test_.*.py$") != -1
 endfunction
 
-let g:rspec_command = 'call Send_to_Tmux("py.test {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("py.test -s {spec}\n")'
