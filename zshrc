@@ -47,7 +47,7 @@ export GOPATH=$HOME/.go
 ## Ruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.1.1
+chruby ruby-2.1.2
 
 ## Python
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
