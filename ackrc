@@ -10,5 +10,6 @@
 --ignore-dir=build
 --ignore-dir=pkg
 --ignore-dir=dist
+--ignore-dir=tmp/assets
 --ignore-dir=spec/tmp/assets
 --ignore-dir=coverage
