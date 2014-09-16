@@ -36,13 +36,13 @@ COMPLETION_WAITING_DOTS="true"
 PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
-PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
-PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PATH
 
 ## Golang
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/Documents/go
+export GOROOT=/usr/local/Cellar/go/1.3.1/libexec
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin:
 
 ## Ruby
 source /usr/local/share/chruby/chruby.sh
