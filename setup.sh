@@ -4,6 +4,12 @@ DOTFILE_ROOT=~/.dotfiles
 
 pushd ~ > /dev/null
 
+echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
+echo " npm install -g coffeelint"
+echo " gem install puppet-lint"
+echo " pip install flake8"
+
+# dot-directories
 for DIR in "vim"; do
   TARGET=~/.$DIR
   if [[ ! -e $TARGET ]]; then
@@ -13,6 +19,8 @@ for DIR in "vim"; do
   fi
 done
 
+
+# dot-files
 for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc" \
   "coffeelint.json"; do
   TARGET=~/.$FILE
@@ -23,6 +31,8 @@ for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc" \
   fi
 done
 
+
+# ~/config-files
 CONFIG_DIR=~/config
 if [[ ! -d ~/config ]]; then
   mkdir $CONFIG_DIR
@@ -31,6 +41,7 @@ for CONFIG_FILE in "flake8"; do
   ln -s $DOTFILE_ROOT/$CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
 done
 
+# setup Vim
 TARGET=~/.vimrc
 if [[ ! -e $TARGET ]]; then
   ln -s ~/.vim/vimrc $TARGET
@@ -39,6 +50,7 @@ else
 fi
 mkdir ~/.vim-tmp
 
+## install Vim bundles
 VIM_ROOT=$DOTFILE_ROOT/vim
 BUNDLE_ROOT=$VIM_ROOT/bundle
 if [[ ! -d $BUNDLE_ROOT ]]; then
