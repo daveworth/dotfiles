@@ -45,16 +45,16 @@ export PATH
 
 ## Golang
 export GOPATH=$HOME/Documents/go
-export GOROOT=/usr/local/Cellar/go/1.3.1/libexec
+export GOROOT=/usr/local/Cellar/go/1.3.3/libexec
 PATH=$PATH:$GOROOT/bin:$GOPATH/bin:
 
 ## Ruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.1.2
+chruby ruby-2.0.0
 
 ## Python
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_VIRTUAL_ENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
