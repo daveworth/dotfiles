@@ -4,6 +4,9 @@ DOTFILE_ROOT=~/.dotfiles
 
 pushd ~ > /dev/null
 
+echo "Brew install important things:"
+echo "$ brew install ruby-install chruby git vim"
+
 echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
 echo " npm install -g coffeelint"
 echo " gem install puppet-lint"
