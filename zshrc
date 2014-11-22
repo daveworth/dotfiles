@@ -7,9 +7,13 @@ DEFAULT_USER="dworth"
 # Example aliases
 alias dir="ls -al"
 alias src="source ~/.zshrc"
-alias :q="logout"
 alias serve_www="ruby -run -ehttpd . -p8000"
 alias gitignore=gi
+
+# shvim
+alias :q="logout"
+alias :sp="tmux splitw"
+alias :vs="tmux splitw -h"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
