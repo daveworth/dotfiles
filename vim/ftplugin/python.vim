@@ -4,16 +4,13 @@ set softtabstop=4
 set autoindent
 set smarttab
 
-function! RunAllSpecs()
-  let l:spec = ""
-  call SetLastSpecCommand(l:spec)
-  call RunSpecs(l:spec)
+let g:test_command = 'py.test'
+
+function! RunCurrentTestFile()
+  let l:test_this_file_command = g:test_command . " -s " . @%
+  VimuxRunCommand(l:test_this_file_command)
 endfunction
 
-" TODO - replace RunNearestSpec for PyTest
-
-function! InSpecFile()
-  return match(expand("%"), "_test.py$") != -1 || match(expand("%"), "/test_.*.py$") != -1
-endfunction
-
-let g:rspec_command = 'call Send_to_Tmux("py.test -s {spec}\n")'
+map sa :call VimuxRunCommand(g:test_command)
+map st :call RunCurrentTestFile()<CR>
+map sn :call RunCurrentTestFile()<CR>
