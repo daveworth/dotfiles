@@ -1,0 +1,83 @@
+# ~/.tmuxinator/do.yml
+
+name: do
+root: ~/Documents/DigitalOcean
+
+windows:
+  - infrastructure:
+      layout: tiled
+      panes:
+        - webpack:
+          - cd cloud
+          - npm install
+          - be webpack -wc --progress --colors -d
+        - dnsapi:
+          - cd cthulhu
+          - source .env.sh
+          - cd docode/src/services/dns
+          - DB_USER=dodns go run cmd/dnsapi/main.go
+        - billing_api:
+          - cd billing
+          - rackup
+        #- elasticsearch:
+          #- elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+  - servers:
+      layout: 7d65,272x66,0,0[272x23,0,0,1,272x21,0,24,10,272x20,0,46,11]
+      panes:
+        - cloud_console:
+          - cd cloud
+          - be rails s -p 3000
+        - atlantis_console:
+          - cd atlantis
+          - be rails s -p 3001
+        - api_console:
+          - cd api
+          - be rails s -p 3002
+  - core:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd core
+          - vim
+        - terminal:
+          - cd core
+  - cloud:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd cloud
+          - vim
+        - terminal:
+          - cd cloud
+  - atlantis:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd atlantis
+          - vim
+        - terminal:
+          - cd atlantis
+  - api:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd api
+          - vim
+        - terminal:
+          - cd api
+  - billing:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd billing
+          - vim
+        - terminal:
+          - cd billing
+  - help:
+      layout: 36bf,272x66,0,0[272x42,0,0,15,272x23,0,43,22]
+      panes:
+        - editor:
+          - cd help
+          - vim
+        - terminal:
+          - cd help

@@ -10,10 +10,11 @@ echo "$ brew install ruby-install chruby git vim"
 echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
 echo " npm install -g coffeelint"
 echo " gem install puppet-lint"
+echo " gem install tmuxinator"
 echo " pip install flake8"
 
 # dot-directories
-for DIR in "vim"; do
+for DIR in "vim" "tmuxinator"; do
   TARGET=~/.$DIR
   if [[ ! -e $TARGET ]]; then
     ln -s $DOTFILE_ROOT/$DIR $TARGET
