@@ -13,6 +13,7 @@ set iskeyword+=-
 " Display
 """""""""
 colorscheme molokai
+let g:rehash256 = 1
 set t_Co=256
 
 set laststatus=2   " always display a status line
@@ -117,4 +118,9 @@ if !has("gui_running")
   map _K :tabnext<CR>
   map _J :tabprevious<CR>
   set mouse=a
+  if has("mouse_sgr")
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  endif
 endif

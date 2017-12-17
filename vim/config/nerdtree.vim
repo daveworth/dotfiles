@@ -6,6 +6,7 @@ let NERDTreeChDirMode=2
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeMouseMode=2
+let NERDTreeShowBookmarks=1
 
 map <Leader>n :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__', '__pycache__']

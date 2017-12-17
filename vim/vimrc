@@ -2,7 +2,10 @@ let mapleader = ','
 command! W w
 command! Q q
 
+let g:pathogen_disabled = ['Vim-Jinja2-Syntax', 'vim-p']
+
 execute pathogen#infect()
 syntax on
 runtime! config/**/*
+let &runtimepath.=',~/.vim/bundle/ale,/usr/local/opt/fzf'
 filetype plugin indent on

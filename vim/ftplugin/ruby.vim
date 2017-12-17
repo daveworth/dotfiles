@@ -1,11 +1,14 @@
-let g:test_command = "bundle exec rspec"
+"let g:test_command = "bundle exec rspec"
+let g:test_command = "make docker-test"
 
 function! RunAllSpecs()
   VimuxRunCommand(g:test_command)
 endfunction
 
 function! RunCurrentSpecFile()
-  let l:test_this_file_command = g:test_command . " " . @%
+  "let l:test_this_file_command = g:test_command . " " . @%
+  let specfile = substitute(@%, getcwd() . "/" , "", "")
+  let l:test_this_file_command = "TESTS=" . l:specfile . " " . g:test_command
   VimuxRunCommand(l:test_this_file_command)
 endfunction
 
@@ -15,7 +18,9 @@ function! RunCurrentSpecFileInDocMode()
 endfunction
 
 function! RunCurrentSpec()
-  let l:test_this_file_command = g:test_command . " " . @% . ":" . line(".")
+  "let l:test_this_file_command = g:test_command . " " . @% . ":" . line(".")
+  let specfile = substitute(@%, getcwd() . "/" , "", "")
+  let l:test_this_file_command = "TESTS=" . l:specfile . ":" . line(".") . " " . g:test_command
   VimuxRunCommand(l:test_this_file_command)
 endfunction
 

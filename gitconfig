@@ -3,13 +3,34 @@
 	email = dworth@digitalocean.com
 [alias]
 	co = checkout
-	st = status
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	;st = status
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	;lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
 	pop = stash pop
-	reuse = commit -a --amend -C HEAD
+	praise = blame
+	sp = smart-pull
+
+; bobbytables
+  st  = status -sb
+	ds  = diff --staged
+	;lol = log --pretty=format:"%C(yellow)%h\\ %C(blue)%ad%C(red)%d\\ %C(reset)%s%C(green)\\ [%cn]" --decorate --date=short
+	;hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	;ribbon = tag --force _ribbon origin/master
+	;catchup = log --patch --reverse --topo-order _ribbon..origin/master
+	;undo = reset --soft HEAD^
+	;latest = for-each-ref --count=30 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+	put = push origin HEAD
+	pr = pull-request
 [core]
 	editor = vim
+	precomposeunicode = false
 [color]
 	ui = true
 [push]
 	default = current
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[hub]
+	host = github.internal.digitalocean.com

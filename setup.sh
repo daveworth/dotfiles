@@ -5,13 +5,13 @@ DOTFILE_ROOT=~/.dotfiles
 pushd ~ > /dev/null
 
 echo "Brew install important things:"
-echo "$ brew install ruby-install chruby git vim"
+echo "$ brew install ruby-install chruby git vim fazd fzf go"
 
-echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
-echo " npm install -g coffeelint"
-echo " gem install puppet-lint"
-echo " gem install tmuxinator"
-echo " pip install flake8"
+#echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
+#echo " npm install -g coffeelint"
+#echo " gem install puppet-lint"
+#echo " gem install tmuxinator"
+#echo " pip install flake8"
 
 # dot-directories
 for DIR in "vim" "tmuxinator"; do
@@ -25,8 +25,7 @@ done
 
 
 # dot-files
-for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc" \
-  "coffeelint.json"; do
+for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc"; do
   TARGET=~/.$FILE
   if [[ ! -e $TARGET ]]; then
     ln -s $DOTFILE_ROOT/$FILE $TARGET
@@ -37,13 +36,13 @@ done
 
 
 # ~/config-files
-CONFIG_DIR=~/config
-if [[ ! -d ~/config ]]; then
-  mkdir $CONFIG_DIR
-fi
-for CONFIG_FILE in "flake8"; do
-  ln -s $DOTFILE_ROOT/$CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
-done
+#CONFIG_DIR=~/.config
+#if [[ ! -d ~/.config ]]; then
+#  mkdir $CONFIG_DIR
+#fi
+#for CONFIG_FILE in "flake8"; do
+#  ln -s $DOTFILE_ROOT/$CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+#done
 
 # setup Vim
 TARGET=~/.vimrc

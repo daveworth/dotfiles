@@ -1,17 +1,24 @@
 --color
 --sort-files
---smart-case
 
 --type-set=sass=.sass
 --type-set=coffee=.coffee
 
 --ignore-dir=log
+--ignore-dir=bundler
 --ignore-dir=build_dir
 --ignore-dir=build
 --ignore-dir=pkg
 --ignore-dir=dist
+--ignore-dir=tmp
 --ignore-dir=tmp/cache
 --ignore-dir=tmp/assets
 --ignore-dir=spec/tmp/assets
 --ignore-dir=coverage
 --ignore-dir=app/assets/images
+--ignore-dir=jekyll-tmp
+--ignore-dir=.sass-cache
+--ignore-dir=vendor
+--ignore-dir=bower_components
+
+--ignore-file=match:/.map.json/
