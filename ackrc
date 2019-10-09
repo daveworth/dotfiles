@@ -22,3 +22,4 @@
 --ignore-dir=bower_components
 
 --ignore-file=match:/.map.json/
+--ignore-file=match:/dump.sql/

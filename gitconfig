@@ -1,17 +1,18 @@
 [user]
 	name = David Worth
-	email = dworth@digitalocean.com
+	email = dworth@strava.com
+	signingkey = E50E685A7FA02BC4
 [alias]
 	co = checkout
 	;st = status
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	;lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
 	pop = stash pop
 	praise = blame
 	sp = smart-pull
 
 ; bobbytables
-  st  = status -sb
+	st  = status -sb
 	ds  = diff --staged
 	;lol = log --pretty=format:"%C(yellow)%h\\ %C(blue)%ad%C(red)%d\\ %C(reset)%s%C(green)\\ [%cn]" --decorate --date=short
 	;hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -20,10 +21,16 @@
 	;undo = reset --soft HEAD^
 	;latest = for-each-ref --count=30 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 	put = push origin HEAD
+	pl = git push origin --force-with-lease
 	pr = pull-request
+
+; lulu
+	recent=for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
 [core]
 	editor = vim
 	precomposeunicode = false
+	autocrlf = input
+	excludesfile = /Users/davidworth/.gitignore_global
 [color]
 	ui = true
 [push]
@@ -34,3 +41,10 @@
 	smudge = git media smudge %f
 [hub]
 	host = github.internal.digitalocean.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
