@@ -14,8 +14,7 @@ alias src="source ~/.zshrc"
 alias jq='jq -C'
 alias gsp='git smart-pull'
 alias prune_merged_branches='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
-# alias run_kafka-manager="docker run -it --rm  -p 9000:9000 -e ZK_HOSTS=localhost:32800 -e APPLICATION_SECRET=letmein sheepkiller/kafka-manager"
-# alias run_docker-registry-frontend="docker run -d -e ENV_DOCKER_REGISTRY_HOST=docker.strava.com -e ENV_DOCKER_REGISTRY_PORT=5000 -p 8080:80 konradkleine/docker-registry-frontend:v2"
+alias hl=humanlog
 
 alias dc=docker-compose
 alias be='bundle exec'
