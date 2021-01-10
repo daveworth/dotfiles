@@ -1,12 +1,10 @@
 [user]
 	name = David Worth
-	email = dworth@strava.com
-	signingkey = E50E685A7FA02BC4
+	email = fixintheworld@gmail.com
+	signingkey = CA475FF925F1723C
 [alias]
 	co = checkout
-	;st = status
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	;lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
 	pop = stash pop
 	praise = blame
 	sp = smart-pull
@@ -39,8 +37,6 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-[hub]
-	host = github.internal.digitalocean.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
