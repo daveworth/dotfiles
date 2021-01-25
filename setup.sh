@@ -4,8 +4,14 @@ DOTFILE_ROOT=~/.dotfiles
 
 pushd ~ > /dev/null
 
-echo "Brew install important things:"
-echo "$ brew install ruby-install chruby git vim fazd fzf go"
+#curl "https://gist.github.com/daveworth/bootstrap.sh" > /tmp/dworth_bootstrap.sh
+## bootstrap.sh
+## curl install homebrew
+
+
+#echo "Brew install important things:"
+#echo "$ brew install --cask iterm2 visual-studio-code 1password spectacle"
+#echo "$ brew install ruby-install chruby git vim fasd fzf go starship"
 
 #echo "Don't forget to install puppet-lint, flake8, and coffeelint as appropriate:"
 #echo " npm install -g coffeelint"
@@ -14,18 +20,18 @@ echo "$ brew install ruby-install chruby git vim fazd fzf go"
 #echo " pip install flake8"
 
 # dot-directories
-for DIR in "vim" "tmuxinator"; do
-  TARGET=~/.$DIR
-  if [[ ! -e $TARGET ]]; then
-    ln -s $DOTFILE_ROOT/$DIR $TARGET
-  else
-    echo Directory $TARGET exists
-  fi
-done
+#for DIR in "vim" "tmuxinator"; do
+#  TARGET=~/.$DIR
+#  if [[ ! -e $TARGET ]]; then
+#    ln -s $DOTFILE_ROOT/$DIR $TARGET
+#  else
+#    echo Directory $TARGET exists
+#  fi
+#done
 
 
 # dot-files
-for FILE in "ackrc" "tmux.conf" "zshrc" "gitconfig" "irbrc" "gemrc"; do
+for FILE in "ackrc" "zshrc" "gitconfig" "irbrc" "gemrc"; do
   TARGET=~/.$FILE
   if [[ ! -e $TARGET ]]; then
     ln -s $DOTFILE_ROOT/$FILE $TARGET
@@ -54,21 +60,21 @@ fi
 mkdir ~/.vim-tmp
 
 ## install Vim bundles
-VIM_ROOT=$DOTFILE_ROOT/vim
-BUNDLE_ROOT=$VIM_ROOT/bundle
-if [[ ! -d $BUNDLE_ROOT ]]; then
-  mkdir $BUNDLE_ROOT
-fi
-pushd $BUNDLE_ROOT >> /dev/null
-while read BUNDLE_URL; do
-  BUNDLE_NAME=`echo $BUNDLE_URL | sed 's/.*\///' | sed 's/\.git$//'`
-  if [[ ! -d $BUNDLE_NAME ]]; then
-    echo $BUNDLE_NAME
-    echo $BUNDLE_URL
-    git clone $BUNDLE_URL
-  else
-    echo "$BUNDLE_NAME is already in the bundle"
-  fi
-done < $VIM_ROOT/current_bundles
+# VIM_ROOT=$DOTFILE_ROOT/vim
+# BUNDLE_ROOT=$VIM_ROOT/bundle
+# if [[ ! -d $BUNDLE_ROOT ]]; then
+#   mkdir $BUNDLE_ROOT
+# fi
+# pushd $BUNDLE_ROOT >> /dev/null
+# while read BUNDLE_URL; do
+#   BUNDLE_NAME=`echo $BUNDLE_URL | sed 's/.*\///' | sed 's/\.git$//'`
+#   if [[ ! -d $BUNDLE_NAME ]]; then
+#     echo $BUNDLE_NAME
+#     echo $BUNDLE_URL
+#     git clone $BUNDLE_URL
+#   else
+#     echo "$BUNDLE_NAME is already in the bundle"
+#   fi
+# done < $VIM_ROOT/current_bundles
 
 popd > /dev/null

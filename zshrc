@@ -1,8 +1,9 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#ZSH=$HOME/.oh-my-zsh
+#ZSH_THEME="agnoster"
+#DEFAULT_USER=$(whoami)
 
-ZSH_THEME="agnoster"
-DEFAULT_USER=$(whoami)
+eval "$(starship init zsh)"
 
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
@@ -14,7 +15,7 @@ alias src="source ~/.zshrc"
 alias jq='jq -C'
 alias gsp='git smart-pull'
 alias prune_merged_branches='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
-alias hl=humanlog
+#alias hl=humanlog
 
 alias dc=docker-compose
 alias be='bundle exec'
@@ -49,19 +50,17 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # Customize to your needs...
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH     # standard path
-
-eval "$(direnv hook zsh)"
+PATH=/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH     # standard path
 
 ## Golang
 export GOPATH=$HOME/Documents/go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/opt/homebrew/Cellar/go/1.15.6/libexec
 PATH=$PATH:$GOROOT/bin:$GOPATH/bin:
 
 ## Ruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.5.5
+[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ] && source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+[ -f /opt/homebrew/opt/chruby/share/chruby/auto.sh ] && source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.0.0
 
 ## Python
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -78,23 +77,25 @@ export BUNDLER_EDITOR=code
 
 export PATH
 
-plugins=(vi-mode)
+bindkey -v
+#plugins=(vi-mode)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ]
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ]
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# yoinked from https://github.com/junegunn/fzf/wiki/examples#git
-fbr() {
-  local branches branch
-  branches=$(git branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-}
+## yoinked from https://github.com/junegunn/fzf/wiki/examples#git
+#fbr() {
+#  local branches branch
+#  branches=$(git branch -vv) &&
+#  branch=$(echo "$branches" | fzf +m) &&
+#  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+#}
 
 eval "$(fasd --init auto)"
-eval "$(hub alias -s)"
+#eval "$(hub alias -s)"
 
 [ -f ~/.dotfiles_local/zshrc ] && source ~/.dotfiles_local/zshrc
+echo -n
